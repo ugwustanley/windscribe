@@ -7,19 +7,50 @@ html {
 
 .main {
   height: 100%;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 20% 70% 10%;
+  padding: 2em;
+  margin: 0;
 }
 
+.location{
+  font-weight: bold;
+  font-size: 1.5rem;
+}
 
-.card{
-    grid-row-start: 2 ;
-    grid-row-end: 3;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
+.weather-img{
+  width: 100%;
+  height: 250px;
+  object-fit: contain;
+  margin: 0;
+}
+
+.weather-desc{
+  color: rgba(0, 0, 0, 0.461);
+  font-size: 1.2rem;
+  font-weight: bold;
+  width: 100%;
+  object-fit: contain;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.weather-temp{
+font-weight: bold;
+font-size: 5rem;
+text-align: center;
+
+}
+
+.weather-temp sup {
+  color: #ffae03;
+  font-size: 1.5rem;
+}
+
+ul{
+  list-style: none;
+  line-height: 30px;
+  font-weight: bold;
+  font-size: 1.2rem;
 }
 
 
@@ -38,39 +69,3 @@ html {
     font-weight: normal;
 }
 
-.body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.body img {
-  width: 150px;
-  height: 150px;
-  margin-right: 30px;
-}
-
-.body h1{
-    font-size: 3rem;
-}
-
-.footer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-button{
-    color :#af7906;
-    padding: 1em 2em;
-    font-size: 1.2em;
-    border: none;
-    border-radius: 20px;
-    box-shadow: 0px 0px 10px rgb(233, 230, 230);
-    transition: all 0.6s ease;
-}
-button:hover{
-    padding: 0.8em 1.8em;
-    border: 1px solid #af7906;
-    box-shadow: 0px 0px 20px rgb(233, 230, 230);
-}
