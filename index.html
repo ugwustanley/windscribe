@@ -7,6 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WindScrib</title>
     <link rel="stylesheet" href="style/main.css">
+    <!--google font-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+     <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@200;300;400;600;700&display=swap" rel="stylesheet">
+
     <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
 </head>
 
@@ -19,21 +23,28 @@
 
     <div class="main">
 
+       <div class="nav">
+           <p class="date" id="date">Thursday, 21</p>
         <p id="location" class="location"> Lagos, NG </p>
-
+       </div>
+        <div class="form">
+            <input type="text" id="search" class="search" placeholder="Search for a city">
+            <button id="btn">Search</button>
+        </div>
+        
         <img class="weather-img" src="images/cloud.png" alt="weather">
-
         <p class="weather-desc" id="weather-desc">Thunder</p>
-
-        <h1 class="weather-temp" id="weather-temp">0<sup>°C</sup>
+        <h1 class="weather-temp" id="weather-temp">0<i>°C</i>
         </h1>
 
         <ul>
-            <li id="lat">Latitude: </li>
-            <li id="lon">Longitude: </li>
-            <li id="humidity">Humidity: </li>
-            <li id="pressure">Pressure: </li>
-            <li id="speed">Speed: </li>
+            <li ><p>Latitude:</p><p id="lat">0</p> </li>
+            <li ><p>Longitude: </p> <p id="lon">0</p></li>
+            <li ><p>Humidity:</p> <p id="humidity">0</p> </li>
+            <li ><p>Pressure:</p> <p id="pressure">0</p></li>
+            <li ><p>Speed:</p> <p id="speed">0</p> </li>
+            <li ><p>Feals Like:</p> <p id="feel">0</p> </li>
+            <li ><p>Status:</p> <p id="status">0</p> </li>
         </ul>
 
     </div>

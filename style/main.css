@@ -3,54 +3,119 @@ html {
   padding: 0;
   margin: 0;
   height: 100%;
+  font-family:overpass;
+  background-color: tomato;
+  background: url('../images/bg.jpg');
+  background-position: center center;
+  background-size: cover;
+  color:skyblue;
 }
 
 .main {
-  height: 100%;
+  width:400px;
+  min-height:500px;
+  background-color: teal;
   padding: 2em;
-  margin: 0;
+  border-radius: 30px;
+  margin:auto;
+  margin: 40px auto;
+}
+.form{
+  transform: translateY(-20px);
+  margin:0;
+  padding:0;
+}
+.search{
+  outline:0;
+  border:none;
+  
+  border-bottom:2px solid skyblue;
+  width:calc(100% - 100px);
+  background-color: transparent;
+  display:inline-block;
+  margin-bottom:-20px;
+  margin-top:30px;
+  color:white;
+  font-size: 18px;
+  font-family:overpass;
+  transform: translateY(3px);
+}
+.search::placeholder{
+  color:white;
+}
+button{
+  background-color: skyblue;
+  outline:none;
+  color:teal;
+  padding:10px 20px;
+  border:none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 10px;
+  border-bottom-left-radius: 0px;
+  margin-left:-3px;
+  
+}
+.nav{
+  display:flex;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size: 1.2rem;
+  transform: translateY(-20px);
+  margin:0;
+  color: rgba(0, 0, 0, 0.461);
 }
 
-.location{
-  font-weight: bold;
-  font-size: 1.5rem;
-}
+
 
 .weather-img{
   width: 100%;
-  height: 250px;
+  height: 200px;
   object-fit: contain;
   margin: 0;
+  padding:0;
+  margin-top:0px;
 }
 
 .weather-desc{
   color: rgba(0, 0, 0, 0.461);
   font-size: 1.2rem;
   font-weight: bold;
-  width: 100%;
-  object-fit: contain;
+  background-color:transparent ;
   text-align: center;
   margin: 0;
   padding: 0;
+  margin-top:-30px;
 }
 
 .weather-temp{
 font-weight: bold;
-font-size: 5rem;
+font-size: 4rem;
 text-align: center;
+margin:0;
+margin-top:30px;
 
 }
 
-.weather-temp sup {
-  color: #ffae03;
-  font-size: 1.5rem;
+.weather-temp  {
+  color: rgb(1, 255, 1);
+  
 }
 
 ul{
   list-style: none;
-  line-height: 30px;
+  line-height: 10px;
   font-weight: bold;
   font-size: 1.2rem;
+  padding-left:0;
+}
+
+ul li{
+  display:flex;
+  justify-content: space-between;
+  margin-left:0;
+  margin-top:0px;
+  padding-top:0px;
 }
 
 

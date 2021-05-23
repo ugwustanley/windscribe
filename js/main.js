@@ -40,6 +40,7 @@ async function getUserGeoLocation() {
   });
 }
 
+
 function checkGeoLocation() {
   if (navigator.geolocation) {
     return navigator.geolocation;
@@ -54,6 +55,21 @@ async function getWeatherInfo({lat,log}) {
   if (!lat || !log) return alert("Location Access Is Required");
 
   const url = `https://api.openweathermap.org/data/2.5/weather?lat=${Latitude}&lon=${Longitude}&appid=${API_KEY}&units=metric`;
+
+  const weatherResponse = await fetch(url);
+
+  const weatherData = await weatherResponse.json();
+
+  console.log(weatherData);
+
+  updateWeatherReport(weatherData);
+}
+
+async function getCityWeather(city) {
+
+  if (!city) return alert("City does not exist");
+
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`;
 
   const weatherResponse = await fetch(url);
 
@@ -82,19 +98,41 @@ function updateWeatherReport(data){
   const humidity = data.main.humidity;
   const pressure = data.main.pressure;
   const speed = data.wind.speed;
+  const feel = data.main.feels_like
+  const status = data.weather[0].description
+  const days = ["Sunday" , "Monday" , "Tuesday" , "Wednesday" , "Thursday" , "Friday" , "Saturday"]
+  const date = new Date()
+  const day = date.getDay()
+  const exactdate = date.getDate()
 
   
-  getEle("weather-temp").innerHTML = temp + " <sup>°C</sup>";
+  getEle("weather-temp").innerHTML = temp + "<i>°C</i>";
   getEle("weather-desc").innerHTML = description;
   getEle("location").innerHTML = location;
-  getEle("lat").innerHTML = "Latitude: "+ lat;
-  getEle("lon").innerHTML = "Longitude: "+ lon;
-  getEle("humidity").innerHTML = "Humidity: "+ humidity;
-  getEle("pressure").innerHTML = "Pressure: "+ pressure;
-  getEle("speed").innerHTML = "Speed: "+ speed;
+  getEle("lat").innerHTML =  lat;
+  getEle("lon").innerHTML = lon;
+  getEle("humidity").innerHTML =  humidity;
+  getEle("pressure").innerHTML =  pressure;
+  getEle("speed").innerHTML = speed;
+  getEle("feel").innerHTML = feel;
+  getEle("status").innerHTML = status
+  getEle("date").innerHTML = `${days[day]}, ${exactdate}`;
 
 
 }
+
+function getInputData(){
+
+  const input = getEle("search").value
+  console.log(input)
+
+  getCityWeather(input)
+  
+
+  getEle("search").value = "";
+}
+
+getEle("btn").addEventListener("click" , getInputData )
 
 
 
